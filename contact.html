@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — HOKAI PRIME</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.contact-block {
+  background: var(--deep);
+  padding: 3rem 2.8rem;
+  transition: background 0.2s;
+}
+
+.contact-block:hover { background: var(--surface); }
+
+.contact-block h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+  color: var(--gold);
+}
+
+.contact-block p {
+  font-size: 0.93rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  max-width: 320px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.contact-link:hover {
+  border-color: var(--gold);
+  color: var(--gold-lt);
+}
+
+.contact-link.yt:hover {
+  border-color: var(--red-lt);
+  color: var(--red-lt);
+}
+
+.contact-icon { font-size: 1rem; }
+
+.inquiry-types {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.inq-block {
+  background: var(--surface);
+  padding: 1.6rem 1.8rem;
+}
+
+.inq-block h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+  margin-bottom: 0.5rem;
+}
+
+.inq-block p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .inquiry-types { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .inquiry-types { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Hokai Prime" /></a>
+  <ul class="nav-links">
+    <li><a href="episodes.html">Episodes</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content:center;">Get in Touch</div>
+    <h1>Contact</h1>
+    <p>Press, collaboration, licensing, or just talking shop about AI filmmaking.</p>
+  </div>
+
+  <section class="section" style="padding-top: 3rem;">
+
+    <div class="contact-grid">
+
+      <div class="contact-block">
+        <h3>Email</h3>
+        <p>
+          For press inquiries, licensing, collaboration proposals, or general correspondence about the series and the production.
+        </p>
+        <!-- Replace with your actual email address -->
+        <a href="mailto:hello@hokaiprime.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          hello@hokaiprime.com
+        </a>
+      </div>
+
+      <div class="contact-block">
+        <h3>YouTube</h3>
+        <p>
+          Subscribe to the channel for episode releases, behind-the-scenes content, and updates from the production.
+        </p>
+        <!-- Replace with your actual YouTube channel URL -->
+        <a href="https://youtube.com/@hokaiprime" target="_blank" rel="noopener" class="contact-link yt">
+          <span class="contact-icon">▶</span>
+          YouTube Channel
+        </a>
+      </div>
+
+    </div>
+
+    <div class="section-label" style="margin-top: 4rem;">We're Open To</div>
+    <h2>Inquiry Types</h2>
+
+    <div class="inquiry-types">
+      <div class="inq-block">
+        <h4>Press</h4>
+        <p>Coverage of the series, interviews, and feature writing on AI-generated independent cinema.</p>
+      </div>
+      <div class="inq-block">
+        <h4>Licensing</h4>
+        <p>Distribution, screening rights, and use of Hokai-verse intellectual property.</p>
+      </div>
+      <div class="inq-block">
+        <h4>Collaboration</h4>
+        <p>Sound design, music, voice talent, and other creative partnerships that fit the project.</p>
+      </div>
+      <div class="inq-block">
+        <h4>AI Filmmaking</h4>
+        <p>Consultation, pipeline discussion, and conversation about the emerging craft of AI-generated long-form narrative.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem; padding: 2.5rem 3rem; border: 1px solid var(--border); background: var(--deep);">
+      <div class="ornament" style="text-align:left; margin:0 0 1rem;">✦</div>
+      <p style="font-size:0.95rem; color:var(--muted); max-width: 560px; line-height:1.75;">
+        Response times vary — this is a one-person operation. Messages are read and considered. Patience is appreciated.
+      </p>
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  <span class="footer-logo">Hokai Prime</span>
+  <nav>
+    <a href="episodes.html">Episodes</a>
+    <a href="characters.html">Characters</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <span>© 2026 Hokai Prime</span>
+</footer>
+
+</body>
+</html>

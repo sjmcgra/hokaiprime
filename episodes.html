@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episodes — HOKAI PRIME</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.episode-block {
+  border: 1px solid var(--border);
+  background: var(--deep);
+  margin-bottom: 2px;
+  transition: background 0.2s;
+}
+
+.episode-block:hover { background: var(--surface); }
+
+.ep-header {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  border-left: 3px solid var(--gold);
+}
+
+.episode-block.coming .ep-header { border-left-color: var(--muted); }
+.episode-block.in-production .ep-header { border-left-color: var(--red); }
+
+.ep-n {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(184,150,46,0.2);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.episode-block:not(.coming):not(.in-production) .ep-n { color: rgba(184,150,46,0.3); }
+
+.ep-meta h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.ep-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid;
+}
+
+.badge-gold { border-color: var(--gold-dk); color: var(--gold); }
+.badge-red  { border-color: var(--red); color: var(--red-lt); }
+.badge-muted { border-color: var(--muted); color: var(--muted); }
+
+.ep-body {
+  padding: 0 3rem 2.5rem calc(3rem + 80px + 2rem);
+}
+
+.ep-body p {
+  font-size: 0.98rem;
+  color: var(--text);
+  max-width: 640px;
+  margin-bottom: 1.2rem;
+}
+
+.ep-body ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ep-body ul li {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+.ep-body ul li strong {
+  display: block;
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.yt-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--border-r);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.yt-placeholder.active {
+  border-color: var(--red-lt);
+  color: var(--red-lt);
+  cursor: pointer;
+}
+
+.yt-placeholder.active:hover {
+  background: var(--red-dim);
+  color: #f0c0c0;
+}
+
+.yt-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .ep-header { grid-template-columns: 60px 1fr; padding: 1.8rem 1.5rem; gap: 1rem; }
+  .ep-header > *:last-child { display: none; }
+  .ep-body { padding: 0 1.5rem 2rem; }
+  .ep-body ul { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Hokai Prime" /></a>
+  <ul class="nav-links">
+    <li><a href="episodes.html" class="active">Episodes</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content:center;">The Series</div>
+    <h1>Episodes</h1>
+    <p>An expanding universe — one episode at a time.</p>
+  </div>
+
+  <section class="section" style="padding-top: 3rem;">
+
+    <!-- EP 01 -->
+    <div class="episode-block coming">
+      <div class="ep-header">
+        <div class="ep-n">01</div>
+        <div class="ep-meta">
+          <h3>Episode One</h3>
+          <div class="ep-badges">
+            <span class="badge badge-muted">Coming Soon</span>
+            <span class="badge badge-gold">18 min</span>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="ep-body">
+        <p>
+          The opening chapter of the Hokai-verse. Kyrie navigates the D'ovra Insidia territories while forces far larger than she can comprehend begin to converge around her.
+        </p>
+        <p>
+          Shot entirely using AI-generation platforms with a custom production pipeline built from the ground up. Every frame produced and edited by a single filmmaker.
+        </p>
+        <ul>
+          <li><strong>Runtime</strong>18 Minutes</li>
+          <li><strong>Status</strong>Post-Production</li>
+          <li><strong>Format</strong>AI-Generated</li>
+        </ul>
+        <!-- Replace href with actual YouTube link when ready -->
+        <a href="#" class="yt-placeholder" title="Link coming soon">
+          <span class="yt-icon">▶</span>
+          Watch on YouTube — Coming Soon
+        </a>
+      </div>
+    </div>
+
+    <!-- EP 02 -->
+    <div class="episode-block in-production">
+      <div class="ep-header">
+        <div class="ep-n">02</div>
+        <div class="ep-meta">
+          <h3>Episode Two</h3>
+          <div class="ep-badges">
+            <span class="badge badge-red">In Production</span>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="ep-body">
+        <p>
+          Pre-production underway. The Hokai-verse expands beyond the territories of Episode One. Details to follow.
+        </p>
+        <ul>
+          <li><strong>Status</strong>Pre-Production</li>
+          <li><strong>Format</strong>AI-Generated</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="divider">
+  <div style="text-align:center; padding: 4rem 2rem;">
+    <div class="ornament">✦</div>
+    <p style="color:var(--muted); font-style:italic; margin-bottom:1.5rem;">Subscribe to be notified when new episodes drop.</p>
+    <!-- Replace with actual YouTube channel link -->
+    <a href="https://youtube.com/@hokaiprime" target="_blank" rel="noopener" class="btn btn-red">Subscribe on YouTube</a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-logo">Hokai Prime</span>
+  <nav>
+    <a href="episodes.html">Episodes</a>
+    <a href="characters.html">Characters</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <span>© 2026 Hokai Prime</span>
+</footer>
+
+</body>
+</html>

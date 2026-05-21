@@ -1,0 +1,407 @@
+/* ── HOKAI PRIME — Shared Stylesheet ── */
+/* Black / Crimson / Antique Gold */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:    #080608;
+  --deep:     #0e0b0d;
+  --surface:  #161014;
+  --surface2: #1e161a;
+
+  --gold:     #b8962e;
+  --gold-lt:  #d4af52;
+  --gold-dk:  #7a6018;
+  --gold-dim: rgba(184, 150, 46, 0.18);
+
+  --red:      #9b1a1a;
+  --red-lt:   #c42020;
+  --red-dim:  rgba(155, 26, 26, 0.2);
+
+  --text:     #cfc0b0;
+  --muted:    #7a6a5a;
+  --border:   rgba(184, 150, 46, 0.18);
+  --border-r: rgba(155, 26, 26, 0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--text);
+  /* Gill Sans stack — falls back gracefully */
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Gillsans', Calibri, sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  background: rgba(8, 6, 8, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+  mix-blend-mode: lighten;
+  opacity: 0.92;
+  transition: opacity 0.2s;
+}
+
+.nav-logo img:hover { opacity: 1; }
+
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold-lt); }
+
+/* ── PAGE WRAPPER ── */
+.page-content {
+  padding-top: 5rem;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scanlines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.18) 3px,
+    rgba(0,0,0,0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(8,6,8,0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-rule {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.1s forwards;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.55em;
+  color: var(--gold-dk);
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.25s forwards;
+}
+
+.hero-title {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(4.5rem, 14vw, 10rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--gold-lt);
+  text-shadow:
+    0 0 80px rgba(184, 150, 46, 0.25),
+    0 2px 4px rgba(0,0,0,0.8);
+  opacity: 0;
+  animation: fadeUp 0.9s 0.4s forwards;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  letter-spacing: 0.7em;
+  color: var(--red-lt);
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.55s forwards;
+}
+
+.hero-divider {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2.5rem auto;
+  opacity: 0;
+  animation: fadeIn 0.8s 0.7s forwards;
+}
+
+.hero-tagline {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-style: italic;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.8s forwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s 1s forwards;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.4rem;
+  border: 1px solid;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+.btn-gold:hover {
+  background: transparent;
+  color: var(--gold-lt);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--muted);
+  color: var(--muted);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-red {
+  background: var(--red);
+  border-color: var(--red);
+  color: #f0d8c0;
+}
+.btn-red:hover {
+  background: transparent;
+  color: var(--red-lt);
+  border-color: var(--red-lt);
+}
+
+/* ── SECTION STRUCTURE ── */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-full {
+  padding: 6rem 2rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.55em;
+  color: var(--gold-dk);
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold-dk);
+  flex-shrink: 0;
+}
+
+h2 {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--gold-lt);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.divider-full {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  padding: 9rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.page-hero h1 {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: var(--gold-lt);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+
+.page-hero p {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── ORNAMENT ── */
+.ornament {
+  text-align: center;
+  color: var(--gold-dk);
+  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  margin: 1rem 0 2rem;
+  user-select: none;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+footer .footer-logo {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  color: var(--gold-dk);
+  letter-spacing: 0.4em;
+  font-size: 0.85rem;
+}
+
+footer nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+footer nav a:hover { color: var(--gold); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.15em; }
+  footer { flex-direction: column; gap: 1.2rem; text-align: center; }
+  footer nav a { margin-left: 1rem; }
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — HOKAI PRIME</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-body p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 1.3rem;
+  max-width: 600px;
+}
+
+.about-body p strong { color: var(--gold-lt); font-weight: 600; }
+.about-body p em { color: var(--red-lt); font-style: italic; }
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.sidebar-block {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  padding: 1.8rem 1.8rem;
+}
+
+.sidebar-block h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+  margin-bottom: 0.9rem;
+}
+
+.sidebar-block p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.sidebar-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-block ul li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sidebar-block ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold-dk);
+}
+
+.philosophy-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.phil-block {
+  background: var(--deep);
+  padding: 2rem 2rem;
+  transition: background 0.2s;
+}
+
+.phil-block:hover { background: var(--surface); }
+
+.phil-num {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-size: 2rem;
+  color: var(--gold-dim);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.phil-block h4 {
+  font-size: 0.88rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.6rem;
+}
+
+.phil-block p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .philosophy-blocks { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Hokai Prime" /></a>
+  <ul class="nav-links">
+    <li><a href="episodes.html">Episodes</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+
+  <div class="page-hero">
+    <div class="section-label" style="justify-content:center;">The Project</div>
+    <h1>About</h1>
+    <p>One filmmaker. One universe. Thirteen years of world-building — made now.</p>
+  </div>
+
+  <section class="section" style="padding-top: 3rem;">
+    <div class="about-grid">
+
+      <div class="about-body">
+        <div class="section-label">The Origin</div>
+        <h2>How Hokai Got Made</h2>
+
+        <p>
+          The Hokai-verse has been in development for over <strong>thirteen years</strong>. Some of its underlying mythology traces back further — nearly thirty. It began, as most world-building does, as something private: a system of characters, conflicts, and cosmologies too large for any conventional production to attempt.
+        </p>
+
+        <p>
+          AI-generated film production changed that calculation.
+        </p>
+
+        <p>
+          What had previously required studios, budgets, and crews of hundreds can now be approached — with enough discipline, tooling, and stubbornness — by a <em>single person</em>. The Hokai series is produced entirely by one filmmaker, using custom-built pipelines developed specifically for this project.
+        </p>
+
+        <p>
+          The production background is in <strong>traditional film</strong>. The workflows reflect that: shooting ratios, scene-based editorial organization, phase-based production discipline. The tools are different. The thinking is the same.
+        </p>
+
+        <div class="section-label" style="margin-top:3rem;">The Aesthetic</div>
+        <h2>Why It Looks Like This</h2>
+
+        <p>
+          AI-generated imagery has a particular aesthetic — consistency drifts, scale shifts, certain artifacts emerge at the edges of what the models can hold. The Hokai series does not try to hide this. It treats it as <em>the medium itself</em>.
+        </p>
+
+        <p>
+          The closest reference point: <strong>Saturday Morning Filmation</strong>. A production tradition that understood its constraints and leaned into them — building a visual language that was entirely its own. Hokai does the same for AI cinema.
+        </p>
+
+        <p>
+          This is not a limitation. This is a new way of making images.
+        </p>
+      </div>
+
+      <div class="about-sidebar">
+        <div class="sidebar-block">
+          <h4>Production Stack</h4>
+          <ul>
+            <li>Final Cut Pro</li>
+            <li>DaVinci Resolve</li>
+            <li>Clipfly / Kling / Galaxy AI</li>
+            <li>Custom Python Pipeline</li>
+            <li>Fountain Screenplay Tools</li>
+            <li>DVC Version Control</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>Background</h4>
+          <p>
+            The filmmaker behind Hokai has a professional background in independent film production, including work with Troma Entertainment. Hokai is produced from Jersey City, NJ.
+          </p>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>Prior Work</h4>
+          <p>
+            <em>El Golfo</em> — 22-minute AI-generated film. The alpha-stage proof of concept that directly informed the Hokai production approach.
+          </p>
+        </div>
+
+        <div class="sidebar-block">
+          <h4>Status</h4>
+          <ul>
+            <li>Episode 01 — Post-production</li>
+            <li>Episode 02 — Pre-production</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+  <section class="section">
+    <div class="section-label">Production Philosophy</div>
+    <h2>How It's Built</h2>
+
+    <div class="philosophy-blocks">
+      <div class="phil-block">
+        <div class="phil-num">I</div>
+        <h4>Traditional Discipline</h4>
+        <p>Shooting ratios. Phase-based production. Editorial bins organized by scene. The infrastructure of professional film production applied to an entirely new medium.</p>
+      </div>
+      <div class="phil-block">
+        <div class="phil-num">II</div>
+        <h4>Custom Tooling</h4>
+        <p>A fully custom pipeline built for this project: manifest management, shot ID systems, watchdog automation, and FCPXML integration. Elegance in how specialized tools connect.</p>
+      </div>
+      <div class="phil-block">
+        <div class="phil-num">III</div>
+        <h4>Embrace the Medium</h4>
+        <p>AI generation inconsistencies are features of the aesthetic, not problems to eliminate. The scale drift of the D'ovra. The particular light of an AI sky. This is cinema's new grammar.</p>
+      </div>
+      <div class="phil-block">
+        <div class="phil-num">IV</div>
+        <h4>One Person</h4>
+        <p>No crew. No studio. No development hell. The Hokai-verse exists because one filmmaker refused to wait for permission to make it.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span class="footer-logo">Hokai Prime</span>
+  <nav>
+    <a href="episodes.html">Episodes</a>
+    <a href="characters.html">Characters</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <span>© 2026 Hokai Prime</span>
+</footer>
+
+</body>
+</html>

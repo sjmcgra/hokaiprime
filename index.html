@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOKAI PRIME — An Original Sci-Fi Series</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO LOGO ── */
+.hero-logo-wrap {
+  opacity: 0;
+  animation: fadeUp 1s 0.4s forwards;
+}
+
+.hero-logo-img {
+  width: clamp(260px, 40vw, 520px);
+  height: auto;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 60px rgba(180, 30, 30, 0.35));
+}
+
+/* ── HOME-SPECIFIC ── */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(155,26,26,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 20%, rgba(184,150,46,0.05) 0%, transparent 60%);
+}
+
+/* Overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.overview-body p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.overview-body p strong { color: var(--gold-lt); font-weight: 600; }
+
+.overview-body p em { color: var(--red-lt); font-style: italic; }
+
+.overview-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat-block {
+  border-left: 1px solid var(--gold-dk);
+  padding-left: 1.4rem;
+}
+
+.stat-number {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* Universe Pillars */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.pillar {
+  background: var(--deep);
+  padding: 2.2rem 2rem;
+  transition: background 0.2s;
+}
+
+.pillar:hover { background: var(--surface); }
+
+.pillar-mark {
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--red-lt);
+  margin-bottom: 0.8rem;
+}
+
+.pillar h3 {
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.pillar p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Episode teaser */
+.ep-teaser {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  background: var(--deep);
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ep-teaser:hover {
+  background: var(--surface);
+  border-color: var(--gold-lt);
+  border-left-color: var(--gold-lt);
+}
+
+.ep-num {
+  font-family: 'Trajan Pro', 'Times New Roman', Georgia, serif;
+  font-size: 3rem;
+  color: var(--gold-dim);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.ep-teaser:hover .ep-num { color: rgba(184,150,46,0.4); }
+
+.ep-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 0.4rem;
+}
+
+.ep-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.ep-arrow {
+  font-size: 1.3rem;
+  color: var(--gold-dk);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.ep-teaser:hover .ep-arrow {
+  transform: translateX(4px);
+  color: var(--gold);
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 1px solid var(--border-r);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-banner p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .overview-stats { flex-direction: row; flex-wrap: wrap; }
+  .ep-teaser { grid-template-columns: 1fr; gap: 1rem; padding: 1.8rem; }
+  .ep-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Hokai Prime" /></a>
+  <ul class="nav-links">
+    <li><a href="episodes.html">Episodes</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="home-bg" aria-hidden="true"></div>
+  <div class="hero-scanlines" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-rule"></div>
+    <p class="hero-eyebrow">An original AI-generated sci-fi series</p>
+    <div class="hero-logo-wrap">
+      <img src="logo.jpg" alt="Hokai Prime" class="hero-logo-img" />
+    </div>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">A universe thirteen years in the making — brought to life through artificial intelligence.</p>
+
+    <div class="hero-cta">
+      <a href="episodes.html" class="btn btn-gold">Watch the Series</a>
+      <a href="about.html" class="btn btn-ghost">About the Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<hr class="divider">
+<section class="section" id="overview">
+  <div class="overview-grid">
+    <div class="overview-body">
+      <div class="section-label">The Series</div>
+      <h2>Welcome to the Hokai-verse</h2>
+      <p>
+        <strong>THE HOKAI</strong> is an AI-generated science fiction series born from over a decade of world-building. Set across civilizations that rise and collapse in deep time, it follows characters whose lives intersect at the fault lines of survival, power, and transformation.
+      </p>
+      <p>
+        Produced as a one-person operation, the series blends <em>traditional filmmaking discipline</em> with cutting-edge AI generation technology to create something genuinely new. Every shot is considered. Every frame is deliberate.
+      </p>
+      <p>
+        This is not a demo. This is cinema — made in a way cinema has never been made before.
+      </p>
+      <a href="about.html" class="btn btn-ghost" style="margin-top:1rem; font-size:0.72rem;">Read More About the Project</a>
+    </div>
+
+    <div class="overview-stats">
+      <div class="stat-block">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years in Development</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">AI</div>
+        <div class="stat-label">Generated Production</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Person. No Crew.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<hr class="divider">
+<section class="section" id="universe">
+  <div class="section-label">The Universe</div>
+  <h2>Inside the Hokai-verse</h2>
+
+  <div class="pillar-grid">
+    <div class="pillar">
+      <div class="pillar-mark">Lore</div>
+      <h3>Deep Mythology</h3>
+      <p>A cosmology built over decades. Civilizations, histories, and conflicts that inform every scene without needing to be explained.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-mark">Characters</div>
+      <h3>The Players</h3>
+      <p>From child protagonists navigating impossible odds to alien warriors and ancient intelligences with their own agendas.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-mark">Creatures</div>
+      <h3>The D'ovra Insidia</h3>
+      <p>Spider-like apex predators that shift between human-scale and kaiju. Among the many creatures that populate the Hokai-verse.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-mark">Medium</div>
+      <h3>AI Cinema</h3>
+      <p>Made entirely with AI-generated imagery. A new cinematic language invented in real time — embracing the aesthetics of the medium.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EPISODES TEASER -->
+<hr class="divider">
+<section class="section">
+  <div class="section-label">Episodes</div>
+  <h2>Now in Production</h2>
+
+  <div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border); margin-top:2rem;">
+    <a href="episodes.html" class="ep-teaser">
+      <div class="ep-num">01</div>
+      <div>
+        <div class="ep-title">Episode One</div>
+        <div class="ep-desc">Kyrie navigates the D'ovra territories. Forces larger than she can comprehend begin to converge. — 18 min. Coming soon.</div>
+      </div>
+      <div class="ep-arrow">→</div>
+    </a>
+    <a href="episodes.html" class="ep-teaser" style="border-left-color: var(--red);">
+      <div class="ep-num">02</div>
+      <div>
+        <div class="ep-title" style="color:var(--red-lt);">Episode Two</div>
+        <div class="ep-desc">In Production. The Hokai-verse expands.</div>
+      </div>
+      <div class="ep-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="divider-full" style="margin-top:-1px;"></div>
+<div class="cta-banner">
+  <div class="ornament">✦ ✦ ✦</div>
+  <p>Press inquiries, collaboration, or just want to talk about independent AI filmmaking?</p>
+  <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+</div>
+
+<footer>
+  <span class="footer-logo">Hokai Prime</span>
+  <nav>
+    <a href="episodes.html">Episodes</a>
+    <a href="characters.html">Characters</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <span>© 2026 Hokai Prime</span>
+</footer>
+
+</body>
+</html>
