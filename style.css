@@ -1,6 +1,8 @@
 /* ── HOKAI PRIME — Shared Stylesheet ── */
 /* Black / Crimson / Antique Gold */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
