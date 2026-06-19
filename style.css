@@ -301,6 +301,10 @@ nav {
   flex-shrink: 0;
 }
 
+#value {
+  scroll-margin-top: 90px;
+}
+
 h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
